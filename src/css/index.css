@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+ul li{
+    list-style: none;
+    padding-left: 15px;
+}
+body{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+}
+/* .container{
+    padding: 0 15px;
+} */
+.heading{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #000;
+}
+.logo{
+    width: 150px;
+    height: 100px;
+}
+.logo img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+.nav-items ul{
+    display: flex;
+    margin-top: 30px;
+}
+.nav-items ul li {
+    list-style: none;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.nav-items ul li a{
+    display: block;
+    padding: 10px 20px;
+    color:#000;
+    text-decoration: none;
+}
+.cards-div{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    cursor: pointer;
+    background-color: #261e1e08;
+    transition: 0.5s ease;
+    overflow: hidden;
+}
+.card:hover{
+    background-color: #261e1e14;
+}
+.body .search-field{
+    margin:20px 0;
+    display: flex;
+}
+.search-filter input{
+    padding: 8px;
+    border: 2px solid #8dcb52;
+    outline: none;
+}
+.card,.shimmer-card{
+    width:205px;
+    height: 450px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.card-img img{
+    width:100%;
+    height: 150px;
+    object-fit: cover;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    transition: 0.5s ease;
+    overflow: hidden;
+}
+/* .body{
+    display: flex;
+} */
+.card:hover .card-img img{
+    transform: scale(1.1);
+}
+.card-body{
+    padding:10px 15px;
+}
+
+.card h1{
+    font-size: 20px;
+    margin: 5px 0;
+}
+.card h2,h3,h4{
+    font-size: 16px;
+    font-weight: normal;
+    margin: 8px 0;
+}
+.card-body h2{
+    font-size: 14px;
+    word-wrap: break-word;
+}
+.footer{
+    margin-top: 30px;
+    background-color: #000;
+    height: 100px;
+}
+.footer p{
+   padding:20px;
+    text-align: center;
+    color:#fff;
+}
+.footer-nav ul{
+    display: flex;
+    justify-content: center;
+}
+.footer-nav ul li{
+    list-style: none;
+    color:#fff;
+    margin:0 20px;
+    cursor: pointer;
+}
+.sortBtn,.Reset-btn,.search-btn{
+    border: none;
+    outline: none;
+    font-size: 14px;
+    margin: 0 10px;
+    background:transparent;
+    position: relative;
+    padding-right: 10px;
+    cursor: pointer;
+    padding: 10px 30px 10px 10px;
+    background-color:#8dcb52;
+    color: white;
+}
+.search-btn{
+    margin-left: 0;
+    padding: 10px 20px;
+}
+.Reset-btn{
+    padding:10px 20px;
+}
+.sortBtn:hover{
+    background-color: #81A263;
+}
+.sortBtn::after{
+    content: "";
+    position: absolute;
+    top: 65%;
+    right:0;
+    border-top: 8px solid white;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid transparent;
+    transform:translate(-50%,-50%);
+}
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.shimmer-card{
+    background-color: #f0f0f0;
+}
+
+.shimmer-container{
+    margin-top: 87px;
+}
+.btnLogin{
+    padding: 10px 20px;
+    outline: none;
+    border:none;
+    cursor: pointer;
+}
+.panel-title a{
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.panel-title a:hover,.panel-title a:focus{
+    cursor: pointer;
+    text-decoration: none;
+}
+.user-card{
+    border: 1px solid #000;
+    padding: 0px 10px;
+}
+.user-card h2,h3,h4{
+    font-size: 16px !important;
+    margin:0 ;
+    margin: 10px 0 !important;
+
+}
