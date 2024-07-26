@@ -34,26 +34,29 @@ const Body = () => {
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false)
     return (
-      <h1>
-        Looks like you are offline!!! please check your internet connection
-      </h1>
+      <div className="container">
+        <h1>
+          Looks like you are offline!!! please check your internet connection
+        </h1>
+      </div>
     );
   // if (resList1.length === 0) return <Shimmer />;
   return resList1.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="search-field">
+    <div className="container body mt-8">
+      <div className="search-field flex justify-start mb-10">
         <div className="search-filter">
           <input
             type="text"
+            className="border-solid border-2 border-green-700 focus-visible:outline-none mr-4"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
-            className="search-btn"
+            className="search-btn bg-green-700 text-white px-4 py-2"
             onClick={() => {
               const filteredSearchText = filteredList.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -72,7 +75,7 @@ const Body = () => {
           </button>
         </div>
         <button
-          className="sortBtn"
+          className="sortBtn mx-4 bg-green-700 text-white px-4 py-2"
           onClick={() => {
             const restList = filteredList.filter(
               (res) => res.info.avgRating > 4.4
@@ -83,7 +86,7 @@ const Body = () => {
           Filter by rating
         </button>
         <button
-          className="Reset-btn"
+          className="Reset-btn bg-green-700 text-white px-4 py-2"
           onClick={() => {
             setFilteredList(resList1);
           }}
@@ -91,9 +94,13 @@ const Body = () => {
           Reset filter
         </button>
       </div>
-      <div className="cards-div">
+      <div className="cards-div  flex flex-wrap">
         {filteredList.map((res) => (
-          <Link to={"/restaurants/" + res.info.id}>
+          <Link
+            to={"/restaurants/" + res.info.id}
+            style={{ textDecoration: "none" }}
+            className="cursor-pointer"
+          >
             {res.info.promoted ? (
               <RestaurantPromoted
                 id={res.info.id}

@@ -17,30 +17,67 @@ const Heading = () => {
   });
   // console.log("Header Rendered");
   return (
-    <div className="heading">
+    <div className="heading  h-[100px] flex bg-white justify-between shadow-lg">
       {/* <h1>Heading</h1> */}
       <div className="logo">
         <Link to="/">
-          <img src={LOGO_URL} alt="Site Logo" />
+          <img
+            className=" w-[120px] h-[100%] object-cover"
+            src={LOGO_URL}
+            alt="Site Logo"
+          />
         </Link>
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>Online Status: {onlineStatus ? "✅Online" : "🔴Offline"}</li>
-          <li>
-            <Link to="/">Home</Link>
+      <div className="nav-item">
+        <ul className="flex justify-between items-center mt-5 ">
+          <li className="px-10 font-bold">
+            <span className="text-orange-500">Online Status:</span>{" "}
+            {onlineStatus ? "✅" : "🔴"}
           </li>
-          <li>
-            <Link to="/about">About</Link>
+          <li className="p-10">
+            <Link
+              to="/"
+              style={{ textDecoration: "none" }}
+              className="text-2xl  text-green-600 font-bold hover:text-green-400 focus:text-green-700"
+            >
+              Home
+            </Link>
           </li>
-          <li>
-            <Link to="/">Cart</Link>
+          <li className="p-10">
+            <Link
+              to="/about"
+              style={{ textDecoration: "none" }}
+              className="text-2xl  text-green-600 font-bold hover:text-green-400 focus:text-green-700"
+            >
+              About
+            </Link>
           </li>
-          <li>
-            <Link to="/contact">Contact</Link>
+          <li className="p-10">
+            <Link
+              style={{ textDecoration: "none" }}
+              to="/"
+              className="text-2xl  text-green-600 font-bold hover:text-green-400 focus:text-green-700"
+            >
+              Cart
+            </Link>
           </li>
-          <li>
-            <Link to="/grocery">Grocery</Link>
+          <li className="p-10">
+            <Link
+              to="/contact"
+              style={{ textDecoration: "none" }}
+              className="text-2xl  text-green-600 font-bold hover:text-green-400 focus:text-green-700"
+            >
+              Contact
+            </Link>
+          </li>
+          <li className="p-10">
+            <Link
+              to="/grocery"
+              style={{ textDecoration: "none" }}
+              className="text-2xl text-green-500 font-bold hover:text-green-400 focus:text-green-700"
+            >
+              Grocery
+            </Link>
           </li>
           {/* <li>
             <button

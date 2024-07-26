@@ -15,11 +15,11 @@ const Grocery = lazy(() => import("./src/components/Grocery"));
 const AppLayout = () => {
   return (
     <>
-      <div className="container">
+      <div className="font-lato">
         <Heading />
         <Outlet />
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 };

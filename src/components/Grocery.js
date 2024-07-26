@@ -1,6 +1,6 @@
 const Grocery = () => {
   return (
-    <div>
+    <div className="container">
       <h1>Grocery Component</h1>
     </div>
   );

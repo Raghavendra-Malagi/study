@@ -12,7 +12,7 @@ class About extends React.Component {
   render() {
     // console.log("Parent rendered");
     return (
-      <div className="about-container">
+      <div className="container">
         <h1>About Us Page</h1>
         <UserClass name={"First Child"} />
       </div>
