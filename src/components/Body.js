@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import resList from "../utils/mockdata";
 import ResturantCard, { withPromotedLabel } from "./ResturantCard";
 import Shimmer from "./Shimmer";
@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [resList1, setResList1] = useState([]);
@@ -21,7 +22,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const jsonData = await data.json();
-    console.log(jsonData);
+    // console.log(jsonData);
     setResList1(
       jsonData?.data.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
@@ -32,6 +33,7 @@ const Body = () => {
     );
   };
   const onlineStatus = useOnlineStatus();
+  const { loggedInUser, setUserName } = useContext(UserContext);
   if (onlineStatus === false)
     return (
       <div className="container">
@@ -93,20 +95,23 @@ const Body = () => {
         >
           Reset filter
         </button>
+        <input
+          type="text"
+          className="ml-2 border-2 border-green-500 focus-visible:outline-none"
+          value={loggedInUser}
+          onChange={(e) => setUserName(e.target.value)}
+        />
       </div>
       <div className="cards-div  flex flex-wrap">
         {filteredList.map((res) => (
           <Link
+            key={res.info.id}
             to={"/restaurants/" + res.info.id}
             style={{ textDecoration: "none" }}
             className="cursor-pointer"
           >
             {res.info.promoted ? (
-              <RestaurantPromoted
-                id={res.info.id}
-                key={res.info.id}
-                resData={res}
-              />
+              <RestaurantPromoted id={res.info.id} resData={res} />
             ) : (
               <ResturantCard id={res.info.id} key={res.info.id} resData={res} />
             )}

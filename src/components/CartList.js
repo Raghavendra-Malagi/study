@@ -1,15 +1,7 @@
-import { useDispatch } from "react-redux";
-import { addItems } from "../utils/cartSlice";
 import { CDN_URL } from "../utils/constants";
-
-const ItemList = ({ items, dummy }) => {
-  const dispatch = useDispatch();
-  const handleAddToCart = (item) => {
-    dispatch(addItems(item));
-  };
-  console.log(dummy);
+const CartList = ({ items }) => {
   return (
-    <div>
+    <div className="w-[800px] m-auto">
       {items.map((item) => (
         <div
           key={item.card.info.id}
@@ -40,13 +32,6 @@ const ItemList = ({ items, dummy }) => {
                   alt=""
                 />
               )}
-              <button
-                className="border-2 font-bold rounded-xl absolute bottom-2 left-10 p-3 bg-white text-green-800"
-                onClick={() => handleAddToCart(item)}
-              >
-                {" "}
-                Add to cart
-              </button>
             </div>
           </div>
         </div>
@@ -54,5 +39,4 @@ const ItemList = ({ items, dummy }) => {
     </div>
   );
 };
-
-export default ItemList;
+export default CartList;

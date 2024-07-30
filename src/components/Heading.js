@@ -1,21 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 const Heading = () => {
-  // let btnName = "Login";
   const [btnName, setBtnName] = useState("Login");
+  const { loggedInUser } = useContext(UserContext);
+  const cartItems = useSelector((store) => store.cart.items);
   const onlineStatus = useOnlineStatus();
-  // const [coutr, setCountr] = useState(0);
-  useEffect(() => {
-    // const interval = setInterval(() => {
-    //   setCountr(coutr + 1);
-    // }, 1000);
-    // return () => {
-    //   clearInterval(interval);
-    // };
-  });
-  // console.log("Header Rendered");
+  console.log(cartItems);
+  useEffect(() => {});
   return (
     <div className="heading  h-[100px] flex bg-white justify-between shadow-lg">
       {/* <h1>Heading</h1> */}
@@ -52,15 +47,7 @@ const Heading = () => {
               About
             </Link>
           </li>
-          <li className="p-10">
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/"
-              className="text-2xl  text-green-600 font-bold hover:text-green-400 focus:text-green-700"
-            >
-              Cart
-            </Link>
-          </li>
+
           <li className="p-10">
             <Link
               to="/contact"
@@ -79,6 +66,27 @@ const Heading = () => {
               Grocery
             </Link>
           </li>
+          <li className="p-10">
+            <button
+              className="text-2xl text-green-500 font-bold"
+              onClick={() =>
+                btnName == "Login" ? setBtnName("Logout") : setBtnName("Login")
+              }
+            >
+              {btnName}
+            </button>
+          </li>
+          <li className="p-10">
+            <Link
+              to="/cart"
+              style={{ textDecoration: "none" }}
+              className="text-3xl  text-green-600 font-bold hover:text-green-400 focus:text-green-700"
+            >
+              Cart ({cartItems.length})
+            </Link>
+          </li>
+          <li className="p-10 text-2xl text-black font-bold">{loggedInUser}</li>
+
           {/* <li>
             <button
               className="btnLogin"
