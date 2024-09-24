@@ -1,3 +1,4 @@
+import React from "react";
 import { useContext } from "react";
 import { CDN_URL } from "../utils/constants";
 import UserContext from "../utils/UserContext";
@@ -7,12 +8,14 @@ import UserContext from "../utils/UserContext";
 
 const ResturantCard = (props) => {
   const { loggedInUser } = useContext(UserContext);
-  // console.log(props);
+  // console.log(props.resData);
   const { resData, id } = props;
+  //console.log("resData" + props);
+
   const { name, cuisines, avgRating, cloudinaryImageId } = resData?.info;
   const { deliveryTime } = resData?.info.sla;
   return (
-    <div className="restaurantCards" id={id}>
+    <div className="restaurantCards" data-testid="resCard" id={id}>
       <div className="card w-[200px] mx-4 my-6  h-[400px] transition-all hover:bg-green-300/30">
         <div className="card-img">
           <img

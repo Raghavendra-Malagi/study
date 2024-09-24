@@ -1,3 +1,4 @@
+import React from "react";
 import { useContext, useEffect, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
@@ -9,11 +10,10 @@ const Heading = () => {
   const { loggedInUser } = useContext(UserContext);
   const cartItems = useSelector((store) => store.cart.items);
   const onlineStatus = useOnlineStatus();
-  console.log(cartItems);
+  // console.log(cartItems);
   useEffect(() => {});
   return (
     <div className="heading  h-[100px] flex bg-white justify-between shadow-lg">
-      {/* <h1>Heading</h1> */}
       <div className="logo">
         <Link to="/">
           <img
@@ -68,6 +68,7 @@ const Heading = () => {
           </li>
           <li className="p-10">
             <button
+              name="login"
               className="text-2xl text-green-500 font-bold"
               onClick={() =>
                 btnName == "Login" ? setBtnName("Logout") : setBtnName("Login")
@@ -90,15 +91,14 @@ const Heading = () => {
           {/* <li>
             <button
               className="btnLogin"
+              name="login"
               onClick={() => {
                 btnName === "Login"
                   ? setBtnName("Logout")
                   : setBtnName("Login");
-                setCountr(coutr + 1);
               }}
             >
               {btnName}
-              {coutr}
             </button>
           </li> */}
         </ul>

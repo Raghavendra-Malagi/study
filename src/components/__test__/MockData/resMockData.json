@@ -1,0 +1,72 @@
+{
+    "info": {
+        "id": "285175",
+        "name": "Thalairaj Biryani",
+        "cloudinaryImageId": "g5sfrpdo2x8pjhpk36xm",
+        "locality": "2nd stage",
+        "areaName": "Indiranagar",
+        "costForTwo": "₹300 for two",
+        "cuisines": [
+            "Andhra",
+            "Biryani",
+            "Hyderabadi",
+            "South Indian",
+            "Indian",
+            "Kebabs",
+            "Snacks",
+            "Beverages"
+        ],
+        "avgRating": 4.3,
+        "parentId": "433875",
+        "avgRatingString": "4.3",
+        "totalRatingsString": "5K+",
+        "sla": {
+            "deliveryTime": 34,
+            "lastMileTravel": 6.4,
+            "serviceability": "SERVICEABLE",
+            "slaString": "30-35 mins",
+            "lastMileTravelString": "6.4 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2024-09-02 03:00:00",
+            "opened": true
+        },
+        "badges": {},
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {},
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "50% OFF",
+            "subHeader": "UPTO ₹100"
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {},
+        "externalRatings": {
+            "aggregatedRating": {
+                "rating": "--"
+            }
+        },
+        "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+    },
+    "analytics": {},
+    "cta": {
+        "link": "https://www.swiggy.com/city/bangalore/thalairaj-biryani-2nd-stage-indiranagar-rest285175",
+        "type": "WEBLINK"
+    }
+}

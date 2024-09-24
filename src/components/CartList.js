@@ -1,9 +1,11 @@
+import React from "react";
 import { CDN_URL } from "../utils/constants";
 const CartList = ({ items }) => {
   return (
     <div className="w-[800px] m-auto">
       {items.map((item) => (
         <div
+          data-testid="foodItems"
           key={item.card.info.id}
           className="p-2 m-2 border-gray-200 border-b-2 text-left"
         >

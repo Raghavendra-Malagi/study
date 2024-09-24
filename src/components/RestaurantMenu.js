@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
@@ -34,15 +35,13 @@ const RestaurantMenu = () => {
         {cuisines.join(",")} - {costForTwoMessage}
       </h2>
       {categories.map((categories, index) => (
-        <>
-          <RestaurantCategory
-            key={index}
-            ItemCheck={index === selectIndex ? true : false}
-            data={categories?.card?.card}
-            setSelectIndex={() => setSelectIndex(index)}
-            dummy={dummy}
-          />
-        </>
+        <RestaurantCategory
+          key={index}
+          ItemCheck={index === selectIndex ? true : false}
+          data={categories?.card?.card}
+          setSelectIndex={() => setSelectIndex(index)}
+          dummy={dummy}
+        />
       ))}
     </div>
   );

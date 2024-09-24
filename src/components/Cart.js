@@ -1,3 +1,4 @@
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CartList from "./CartList";
 import { clearItems } from "../utils/cartSlice";
@@ -15,6 +16,8 @@ const Cart = () => {
         <h1 className="text-2xl">Your cart is empty!</h1>
       ) : (
         <button
+          data-testid="clearCart"
+          name="Clear Cart"
           onClick={handleClearCart}
           className="p-4 m-4 bg-green-700 text-white hover:bg-green-400"
         >

@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState, useContext } from "react";
 import resList from "../utils/mockdata";
 import ResturantCard, { withPromotedLabel } from "./ResturantCard";
@@ -51,6 +52,7 @@ const Body = () => {
         <div className="search-filter">
           <input
             type="text"
+            data-testid="searchInput"
             className="border-solid border-2 border-green-700 focus-visible:outline-none mr-4"
             value={searchText}
             onChange={(e) => {
@@ -78,6 +80,7 @@ const Body = () => {
         </div>
         <button
           className="sortBtn mx-4 bg-green-700 text-white px-4 py-2"
+          name="Filter by rating"
           onClick={() => {
             const restList = filteredList.filter(
               (res) => res.info.avgRating > 4.4
